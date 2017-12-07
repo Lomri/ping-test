@@ -23,7 +23,39 @@ $Logfile = "C:\Users\$env:UserName\Desktop\Massa_title_vaihto.log"
 $server = ""
 
 Function LogWrite  # Helpottaa login tekemisessä
+{﻿# Käyttäjien propertyt:
+#
+# 'DisplayName',
+# 'SamAccountName',
+# 'Enabled',
+# 'Created',
+# 'AccountExpirationDate',
+# 'telephoneNumber',
+# 'EmailAddress',
+# 'mobile',
+# 'title',
+# 'manager',
+# 'physicalDeliveryOfficeName',
+# 'otherTelephone',
+# 'extensionAttribute1', # requires exchange
+# 'extensionAttribute7',
+# 'extensionAttribute15'
+#)
+
+$StartTime = Get-Date
+$totalusers = 0
+$Logfile = "C:\Users\$env:UserName\Desktop\Massa_title_vaihto.log"
+$server = ""
+
+Function LogWrite  # Helpottaa login tekemisessä
 {
+   Param ([string]$logstring)
+
+   Add-content $Logfile -value $logstring
+   # Käytä "Write-host" sijaan "LogWrite"
+}
+
+Function Changetitle # Vaihtaa titlejä. Syötä 
    Param ([string]$logstring)
 
    Add-content $Logfile -value $logstring
