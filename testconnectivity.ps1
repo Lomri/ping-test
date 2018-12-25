@@ -2,7 +2,7 @@
 # Pings a certain IP every second
 
 # ip to test connectivity to
-$TestIP = 8.8.8.8
+$TestIP = "8.8.8.8"
 # sleep time in seconds
 $Sleep_time = 1
 # we use this
